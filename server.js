@@ -16,9 +16,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useFindAndModify: false
+// mongoose.connect(MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
+
+mongoose.connect("mongodb+srv://budget2:katya22@cluster0.5k55w.mongodb.net/Budget-Tracker?retryWrites=true&w=majority", { useNewUrlParser: true }, () => {
+  console.log("Connected to db successfully");
 });
 
 // routes
