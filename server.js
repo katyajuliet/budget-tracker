@@ -21,7 +21,7 @@ app.use(express.static("public"));
 //   useFindAndModify: false
 // });
 
-mongoose.connect("mongodb+srv://budget2:katya22@cluster0.5k55w.mongodb.net/Budget-Tracker?retryWrites=true&w=majority", { useNewUrlParser: true }, () => {
+mongoose.connect("mongodb+srv://budget2:tracker@cluster0.5k55w.mongodb.net/Budget-Tracker?retryWrites=true&w=majority", { useNewUrlParser: true }, () => {
   console.log("Connected to db successfully");
 });
 
