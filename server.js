@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 
 const PORT = process.env.PORT || 3001;
-// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/budget";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget";
 
 const app = express();
 
@@ -16,13 +16,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongoose.connect(MONGODB_URI, {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-
-mongoose.connect("mongodb+srv://budget2:tracker@cluster0.5k55w.mongodb.net/Budget-Tracker?retryWrites=true&w=majority", { useNewUrlParser: true }, () => {
-  console.log("Connected to db successfully");
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 // routes

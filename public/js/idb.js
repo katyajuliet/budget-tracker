@@ -1,4 +1,3 @@
-// create variable to hold db connection
 let db;
 // establish a connection to IndexedDB database 
 const request = indexedDB.open('budget_tracker', 1);
@@ -11,9 +10,8 @@ request.onupgradeneeded = function(event) {
 
 // upon a successful 
 request.onsuccess = function(event) {
-    // when db is successfully created with its object store 
     db = event.target.result;
-    // check if app is online
+    // check if online
     if (navigator.onLine) {
       uploadTransaction();
     }
@@ -24,21 +22,14 @@ console.log(event.target.errorCode);
 };
 
 
-// Will be executed if we attempt to submit a new transaction and there's no internet connection
 function saveRecord(record) {
-    // open a new transaction with the database with read and write permissions 
-    const transaction = db.transaction(['new_transaction'], 'readwrite');
-  
-    // access the object store 
+    const transaction = db.transaction(['new_transaction'], 'readwrite'); 
     const budgetObjectStore = transaction.objectStore('new_transaction');
-  
-    // add record to your store with add method
     budgetObjectStore.add(record);
 };
 
-// function that will handle collecting all of the data 
+// function that will handle collecting data 
 function uploadTransaction() {
-    // open a transaction on your db
     const transaction = db.transaction(['new_transaction'], 'readwrite');
   
     // access your object store
@@ -64,11 +55,11 @@ function uploadTransaction() {
           if (serverResponse.message) {
             throw new Error(serverResponse);
           }
-          // open one more transaction
+          
           const transaction = db.transaction(['new_transaction'], 'readwrite');
-          // access the object store
+          // access stored
           const budgetObjectStore = transaction.objectStore('new_transaction');
-          // clear all items in your store
+          // clear all items in your stored
           budgetObjectStore.clear();
 
           alert('All saved transactions has been submitted!');
@@ -79,6 +70,4 @@ function uploadTransaction() {
     }
   }
 }
-
-// listen for app coming back online
 window.addEventListener('online', uploadTransaction);
