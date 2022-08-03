@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
-const WebpackPwaManifest = require("webpack-pwa-manifest");
+// const WebpackPwaManifest = require("webpack-pwa-manifest");
 // const dotenv = require("dotenv")
 
 const PORT = process.env.PORT || 3001;
