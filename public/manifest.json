@@ -1,6 +1,4 @@
 {
-    "name": "budget-tracker",
-    "short_name": "budget-tracker",
     "icons": [
         {
         "src": "icons/icon-72x72.png",
@@ -43,8 +41,12 @@
         "type": "image/png"
         }
     ],
+    "name": "budget-tracker",
+    "short_name": "expenses",
     "theme_color": "#ffffff",
+    "orientation": "portrait",
+    "start_url": "../index.html",
+    "description": "budget tracking app that allows you to record expenses online and off.",
     "background_color": "#ffffff",
-    "start_url": ".",
     "display": "standalone"
 }
