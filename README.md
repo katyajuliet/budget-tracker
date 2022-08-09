@@ -21,7 +21,7 @@ Command line start: npm start
 [Deployed-App](https://nameless-island-59063.herokuapp.com/)
 
 ## Screenshot
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/katyajuliet/budget-tracker/main/public/icons/screenshot.png)
 
 ## Contribution
 If you would like to contribute to this project, contact Katya [Email](mailto:katyajuliet22@gmail.com)
