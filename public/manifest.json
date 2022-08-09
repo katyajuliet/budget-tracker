@@ -41,7 +41,7 @@
           "type": "image/png"
       }
   ],
-  "name": "budget-tracker",
+  "name": "my-monthly-budget-tracker",
   "short_name": "budget",
   "theme_color": "#024601",
   "background_color": "#000000",
